@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let form = document.querySelector("form")
     /// le especificamos nustro archivo .js
     var calendarEl = document.getElementById('appoiment');
+
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       /// le cambios el idioma
@@ -25,10 +26,38 @@ document.addEventListener('DOMContentLoaded', function() {
         form.start.value=info.dateStr;
         /// fecha fin
         form.end.value=info.dateStr;
-
         /// cuando seleccionemos nuestro dia en el calendario se nos despleigue el modal
         $("#exampleModal").modal("show");
-      }
+        calendar.addEvent({ title: 'mi evento',date:info.dateStr})
+      },
+
+      eventClick: function(info) {
+        console.log(info.event.title);
+        console.log(info.event.name);
+        console.log(info.event.lastName);
+        console.log(info.event.identification);
+        console.log(info.event.mascot);
+        console.log(info.event.start);
+        console.log(info.event.end);
+
+        $('name').val(info.event.name);
+
+        $("#exampleModal").modal('show');
+
+    },
+    //   events:[
+    //     {
+    //         title: 'mi evento',
+    //         name: "elianm",
+    //         lastName: 'elianm',
+    //         identification: '11111',
+    //         mascot :'ssssss',
+    //         start:'2023-01-20 00:00:00',
+    //         end:'2023-01-20 00:00:00'
+    //     }
+    //   ]
+
+    events: "{{url('/appoiment/show')}}"
 
     });
     calendar.render();

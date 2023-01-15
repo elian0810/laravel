@@ -16,13 +16,16 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('event.index');
 });
 
 #ruta que lista todas nustras citas
-Route::get('/appoiment', [appoimentController::class, 'index'])->name('appoiment_index');
+// Route::group(['prefix' => 'event'], function () {
+Route::resource('appoiment', appoimentController::class);
+
+Route::get('/appoiment', [appoimentController::class, 'index',])->name('appoiment_index');
 #ruta que lista nustra cita por id
-Route::put('/appoiment/{id}', [appoimentController::class, 'show'])->name('appoiment_show');
+Route::put('/appoiment/show', [appoimentController::class, 'show'])->name('appoiment_show');
 #ruta que actuliza nuestroas citas
 Route::delete('/appoiment/{id}', [appoimentController::class, 'destroy'])->name('appoiment_destroy');
 #ruta que crea nuestroas citas
@@ -31,3 +34,4 @@ Route::post('/appoiment/create', [appoimentController::class, 'store'])->name('a
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// });

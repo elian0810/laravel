@@ -13,11 +13,35 @@ class appoimentController extends Controller
      */
     public function index()
     {
-        // $appoiment = Appoiment::all();
-        // return $appoiment;
-        return view('event.index');
+        // $appoiment = array();
+        $bookings = Appoiment::all();
+        return $bookings;
+        // foreach($bookings as $booking){
+        //     $events [] = [
+        //         'name' =>$booking->name,
+        //         'lastName'=>$booking->lastName,
+        //         'identification'=>$booking->identification,
+        //         'mascot'=>$booking->mascot,
+        //         'start'=>$booking->start,
+        //         'end'=>$booking->end,
+        //     ];
+        // }
+        // return view('event.index',['events'=>$events]);
+    }
 
-        //
+    public function getevents()
+    {
+         $data = Appoiment::get(['name','lastName','identification','mascot','start', 'end']);
+         return response()->json($data);
+    }
+
+    public function validateTime($start, $end)
+    {
+
+        $appoiment = AppoimentDB::select('*')
+        ->whereTime('end', '>=', $end)
+        ->first();
+        return $appoiment == null ? true : false ;
     }
 
     /**
@@ -34,17 +58,11 @@ class appoimentController extends Controller
             #nos traemos todos los campos ingresados
              $input = $request->all();
               #creamos todos los campos validadps
-             $appoiment = Appoiment::create($input);
+            $appoiment = Appoiment::create($input);
              return $input;
         } catch (\Throwable $th) {
-            // dump($this->paginateList);
             $this->input = [];
         }
-
-
-
-
-        //
     }
 
     /**
@@ -56,8 +74,8 @@ class appoimentController extends Controller
     public function show($id)
     {
         #especificamos nuestro modelo y filtramos po el id
-        $appoiment = Appoiment::find($id);
-        return $appoiment;
+        $appoiment['evetn'] = Appoiment::all();
+        return response()->json($appointments['evetn']);
         //
     }
 
