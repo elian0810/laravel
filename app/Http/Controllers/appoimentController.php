@@ -38,7 +38,7 @@ class appoimentController extends Controller
              return $input;
         } catch (\Throwable $th) {
             // dump($this->paginateList);
-            $this->input = ['no se pudo ingresar'];
+            $this->input = [];
         }
 
 
