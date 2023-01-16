@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         $('name').val(info.event.name);
 
-        $("#exampleModal").modal('show');
+        $("#exampleModal").modal("show");
 
     },
     //   events:[

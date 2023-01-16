@@ -27,7 +27,7 @@ Route::get('/appoiment', [appoimentController::class, 'index',])->name('appoimen
 #ruta que lista nustra cita por id
 Route::put('/appoiment/show', [appoimentController::class, 'show'])->name('appoiment_show');
 #ruta que actuliza nuestroas citas
-Route::delete('/appoiment/{id}', [appoimentController::class, 'destroy'])->name('appoiment_destroy');
+Route::delete('/appoiment/update', [appoimentController::class, 'update'])->name('appoiment_destroy');
 #ruta que crea nuestroas citas
 Route::post('/appoiment/create', [appoimentController::class, 'store'])->name('appoiment_store');
 

@@ -62,7 +62,14 @@
                         <input type="text" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="Escribir...">
                         <small id="helpId" class="form-text text-muted">Este campo es requerido</small>
                     </div>
-                    {{---------------------------------------------------}}
+
+                     {{----Hace referencia a nustros campo de start---}}
+                     <div class="form-group">
+                        <label for="startss">Hora</label>
+                        <input type="time" class="form-control" name="startss" id="startss" aria-describedby="helpId" placeholder="Escribir...">
+                        <small id="helpId" class="form-text text-muted">Este campo es requerido</small>
+                    </div>
+
 
                     {{----Hace referencia a nustros campo de end---}}
                     <div class="form-group">
@@ -75,10 +82,9 @@
             </div>
               <div class="modal-footer">
                 {{----Hace referencia a nustros boton de guardar---}}
-                <button type="button" class="btn btn-success" id=btSave>Guardar</button>
+                <button type="button" class="btn btn-success" id=btSave>Guardar/Modificar</button>
                 {{---------------------------------------------------}}
-                {{----Hace referencia a nustros boton de edita---}}
-                <button type="button" class="btn btn-warning" id=btSave>Modificar</button>
+
                  {{-- <button type="button" class="btn btn-secondary" id=btsecondary data-dismiss="modal">Cerrar</button> --}}
                 {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
 
