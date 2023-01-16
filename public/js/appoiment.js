@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     /// creacmos una variable para especificar nuesro fomulario
-    let form = document.querySelector("form")
+    let form = document.querySelector("#form")
     /// le especificamos nustro archivo .js
     var calendarEl = document.getElementById('appoiment');
 

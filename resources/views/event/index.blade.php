@@ -20,7 +20,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="">
+                <form action=""id="form">
 
                     {!! csrf_field() !!}
 
@@ -59,7 +59,7 @@
                     {{----Hace referencia a nustros campo de start---}}
                     <div class="form-group">
                         <label for="start">Fecha Inicio</label>
-                        <input type="text" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="Escribir...">
+                        <input type="date" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="Escribir...">
                         <small id="helpId" class="form-text text-muted">Este campo es requerido</small>
                     </div>
 
@@ -74,7 +74,7 @@
                     {{----Hace referencia a nustros campo de end---}}
                     <div class="form-group">
                         <label for="end">Fecha Fin</label>
-                        <input type="text" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="Escribir...">
+                        <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="Escribir...">
                         <small id="helpId" class="form-text text-muted">Este campo es requerido</small>
                     </div>
                     {{---------------------------------------------------}}
@@ -82,9 +82,11 @@
             </div>
               <div class="modal-footer">
                 {{----Hace referencia a nustros boton de guardar---}}
-                <button type="button" class="btn btn-success" id=btSave>Guardar/Modificar</button>
+                <button type="button" class="btn btn-success" id=btSave>Guardar</button>
                 {{---------------------------------------------------}}
-
+                {{----Hace referencia a nustros boton de guardar---}}
+                <button type="button" class="btn btn-danger" id=btDestroy>Eliminar</button>
+                {{---------------------------------------------------}}
                  {{-- <button type="button" class="btn btn-secondary" id=btsecondary data-dismiss="modal">Cerrar</button> --}}
                 {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
 
