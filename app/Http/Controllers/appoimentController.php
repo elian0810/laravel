@@ -88,7 +88,10 @@ class appoimentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        request()->validate(Appoiment::$rules);
+        $appoiment->update($request->all());
+        return response()->json($appointments);
+
     }
 
     /**

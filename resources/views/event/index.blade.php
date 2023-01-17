@@ -63,13 +63,6 @@
                         <small id="helpId" class="form-text text-muted">Este campo es requerido</small>
                     </div>
 
-                     {{----Hace referencia a nustros campo de start---}}
-                     <div class="form-group">
-                        <label for="startss">Hora</label>
-                        <input type="time" class="form-control" name="startss" id="startss" aria-describedby="helpId" placeholder="Escribir...">
-                        <small id="helpId" class="form-text text-muted">Este campo es requerido</small>
-                    </div>
-
 
                     {{----Hace referencia a nustros campo de end---}}
                     <div class="form-group">
@@ -85,7 +78,7 @@
                 <button type="button" class="btn btn-success" id=btSave>Guardar</button>
                 {{---------------------------------------------------}}
                 {{----Hace referencia a nustros boton de guardar---}}
-                <button type="button" class="btn btn-danger" id=btDestroy>Eliminar</button>
+                {{-- <button type="button" class="btn btn-danger" id=btDestroy>Eliminar</button> --}}
                 {{---------------------------------------------------}}
                  {{-- <button type="button" class="btn btn-secondary" id=btsecondary data-dismiss="modal">Cerrar</button> --}}
                 {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
